@@ -1,6 +1,6 @@
 from flask import Flask, request
 app = Flask(__name__)
-app.secret_key = "JMD"
+app.secret_key = "MTD"
 #Make an app.route() decorator here
 
 
