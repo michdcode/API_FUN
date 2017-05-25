@@ -12,7 +12,8 @@ From the class: Use the Google API to get the latitute & longitude of a city. [M
 
 From the class: Take in a location and meal type, use project #2 to get geocode, use Foursquare API to find a restaurant with meal type at geocode location, and display name & address of location along with a link to a picture of the restaurant. 
 
-## Project #4 - Creating API Endpoints (Find_A_Restaurant.py)
+## Project #4 - Creating API Endpoints (endpoints[num].py & Restaurant_Two)
 
-From the class: Progression of exercises that lead to the creation of API endpoints. 
+From the class: Progression of exercises that lead to the creation of API endpoints and revised Find A Restaurant mashup.
+
 
