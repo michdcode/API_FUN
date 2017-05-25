@@ -1,28 +1,34 @@
 from flask import Flask, request
 app = Flask(__name__)
+app.secret_key = "JMD"
 #Make an app.route() decorator here
 
 
-@app.route("/puppies/", methods=['GET', 'POST'], strict_slashes=False)
+@app.route('/')
+def puppies():
+    return "Yes, puppies!"
+
+
+@app.route('/puppies', methods=['GET', 'POST'])
 def puppiesFunction():
     if request.method == 'GET':
     #Call the method to Get all of the puppies
-        getAllPuppies()
+        return getAllPuppies()
     elif request.method == 'POST':
     #Call the method to make a new puppy
-        makeANewPuppy()
+        return makeANewPuppy()
 
 
 #Make another app.route() decorator here that takes in an integer id in the
-@app.route("/puppies/<int:id>", methods=['GET', 'PUT', 'DELETE'], strict_slashes=False)
+@app.route('/puppies/<int:id>', methods=['GET', 'PUT', 'DELETE'])
 def puppiesFunctionId(id):
     if request.method == 'GET':
     #Call the method to get a specific puppy based on their id
-        getPuppy(id)
+        return getPuppy(id)
     if request.method == 'PUT':
-        updatePuppy(id)
+        return updatePuppy(id)
     elif request.method == 'DELETE':
-        deletePuppy(id)
+        return deletePuppy(id)
 
 
 def getAllPuppies():
@@ -45,6 +51,7 @@ def deletePuppy(id):
     return "Removing Puppy with id %s" % id
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.debug = True
-    app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=5000)
+
